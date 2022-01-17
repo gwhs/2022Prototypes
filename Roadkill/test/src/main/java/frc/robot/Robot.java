@@ -5,6 +5,7 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
+import com.ctre.phoenix.sensors.CANCoder;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot {
   private TalonFX m_white;
   private CaitpultContainer m_Container;
 
+
   @Override
   public void robotInit() {
     xbox = new XboxController(0);
@@ -31,6 +33,7 @@ public class Robot extends TimedRobot {
 
     m_Container = new CaitpultContainer();
   //  m_myRobot = new DifferentialDrive(m_blue, m_white);
+
   
     
   }
@@ -61,5 +64,6 @@ public void teleopInit(){
 
   @Override
   public void teleopPeriodic() {
+  
   }
 }

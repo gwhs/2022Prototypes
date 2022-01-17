@@ -17,9 +17,8 @@ public class CaitpultContainer {
     private final SpinMotor m_SpinMotor = new SpinMotor(motor1, 7);
 
     public CaitpultContainer() {
-        motor1 = new TalonFX(1);
+        motor1 = new TalonFX(8);
         mXbox = new XboxController(0);
-
         configureButtonBindings();
         
     }
@@ -27,8 +26,8 @@ public class CaitpultContainer {
     private void configureButtonBindings() {
         JoystickButton buttonA = new JoystickButton(mXbox, XboxController.Button.kA.value);
 
-        buttonA.whenPressed(new SpinMotor(motor1, 1));
-
+        buttonA.whenPressed(new SpinMotor(motor1, 0.5));
+        
         //JoystickButton buttonA = new JoystickButton(xbox, XboxController.Button.kA.value);
 
         //buttonA.whenPressed(new commands(m_blue, m_white, 1.0));
