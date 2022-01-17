@@ -21,7 +21,7 @@ public class Robot extends TimedRobot {
   private XboxController xbox;
   private TalonFX m_blue;
   private TalonFX m_white;
-  private Container m_Container;
+  private CaitpultContainer m_Container;
 
   @Override
   public void robotInit() {
@@ -29,7 +29,7 @@ public class Robot extends TimedRobot {
     m_blue = new TalonFX(7);
     m_white = new TalonFX(6);
 
-    m_Container = new Container();
+    m_Container = new CaitpultContainer();
   //  m_myRobot = new DifferentialDrive(m_blue, m_white);
   
     

@@ -13,6 +13,7 @@ public class SpinMotor extends CommandBase {
     public SpinMotor(TalonFX motor, double speed) {
         moto = motor;
         this.speed = speed;
+        System.out.println();
     }
 
     @Override

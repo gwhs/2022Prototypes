@@ -11,12 +11,12 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
 /** Add your docs here. */
-public class Container {
+public class CaitpultContainer {
     XboxController mXbox;
     private TalonFX motor1;
     private final SpinMotor m_SpinMotor = new SpinMotor(motor1, 7);
 
-    public Container() {
+    public CaitpultContainer() {
         motor1 = new TalonFX(1);
         mXbox = new XboxController(0);
 
