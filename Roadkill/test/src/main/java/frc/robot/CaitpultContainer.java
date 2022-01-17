@@ -17,7 +17,7 @@ public class Container {
     private final SpinMotor m_SpinMotor = new SpinMotor(motor1, 7);
 
     public Container() {
-        motor1 = new TalonFX(7);
+        motor1 = new TalonFX(1);
         mXbox = new XboxController(0);
 
         configureButtonBindings();
@@ -27,7 +27,7 @@ public class Container {
     private void configureButtonBindings() {
         JoystickButton buttonA = new JoystickButton(mXbox, XboxController.Button.kA.value);
 
-        buttonA.whenPressed(new SpinMotor(motor1, .1));
+        buttonA.whenPressed(new SpinMotor(motor1, 1));
 
         //JoystickButton buttonA = new JoystickButton(xbox, XboxController.Button.kA.value);
 
