@@ -28,13 +28,14 @@ public class Robot extends TimedRobot {
     m_blue = new TalonFX(7);
     m_white = new TalonFX(6);
   //  m_myRobot = new DifferentialDrive(m_blue, m_white);
-  JoystickButton buttonA = new JoystickButton(xbox, XboxController.Button.kA.value);
-
-   buttonA.whenPressed(new commands(m_blue, m_white, 1.0));
+  
     
   }
 
   @Override
   public void teleopPeriodic() {
+    JoystickButton buttonA = new JoystickButton(xbox, XboxController.Button.kA.value);
+
+   buttonA.whenPressed(new commands(m_blue, m_white, 1.0));
   }
 }
