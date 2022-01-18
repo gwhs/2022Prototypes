@@ -6,18 +6,19 @@ package frc.robot;
 
 import frc.robot.SpinMotor;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.sensors.CANCoder;
 
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class motor extends SubsystemBase {
+public class Motor extends SubsystemBase {
   private TalonFX motor;
 
   /** Creates a new motor. */
-  public motor() {
-    motor = new TalonFX(8);
+  public Motor(int id) {
+    motor = new TalonFX(id);
     motor.setSelectedSensorPosition(0.0);
 
 
@@ -26,9 +27,18 @@ public class motor extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler 
-    System.out.println(motor.getSelectedSensorPosition());
 
     }
+
+  public void setMotorPercent(double speed){
+    motor.set(ControlMode.PercentOutput, speed);
+
+  }
+
+  public double getPosition(){
+    motor.getSelectedSensorPosition();
+    return motor.getSelectedSensorPosition();
+  }
 
   public TalonFX getMotor(){
     return motor;

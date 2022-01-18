@@ -9,32 +9,30 @@ import com.ctre.phoenix.sensors.CANCoder;
 
 
 public class SpinMotor extends CommandBase {
-    private TalonFX moto;
+    private Motor motor;
     private double speed; // perscent output -1 -> 1
 
-    public SpinMotor(TalonFX motor, double speed) {
-        moto = motor;
+    public SpinMotor(Motor moto, double speed) {
+        this.motor = moto;
         this.speed = speed;
-        System.out.println();
     }
 
     @Override
     public void initialize() {
-        
-        
-    }
-    public TalonFX getMotor(){
-        return moto;
+        System.out.println("Hello World");
     }
 
     @Override
     public void execute() {
-        moto.set(ControlMode.PercentOutput, speed);
+        motor.setMotorPercent(0.5);
+        System.out.println("position is: " + motor.getPosition());
     }
 
     @Override
     public void end(boolean interrupted) {
+        motor.setMotorPercent(0);
 
+    System.out.println("Goodbye World");
     }
 
     @Override
