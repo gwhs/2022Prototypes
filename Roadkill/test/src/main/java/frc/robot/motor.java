@@ -19,7 +19,6 @@ public class Motor extends SubsystemBase {
   /** Creates a new motor. */
   public Motor(int id) {
     motor = new TalonFX(id);
-    motor.setSelectedSensorPosition(0.0);
 
 
   }
@@ -42,5 +41,9 @@ public class Motor extends SubsystemBase {
 
   public TalonFX getMotor(){
     return motor;
+  }
+
+  public void setSelectedSensorPosition() {
+    motor.setSelectedSensorPosition(0);
   }
   }
